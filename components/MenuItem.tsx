@@ -17,27 +17,27 @@ export default function MenuItem({ menuItem }: { menuItem: IMenuItem }) {
           <div className="grid flex-1 auto-rows-min gap-0.5">
             <div className="text-sm text-muted-foreground">Calories</div>
             <div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-              {menuItem.calories}/2000
+              {menuItem.calories}
               <span className="text-sm font-normal text-muted-foreground">
-                kcal
+                /2000kcal
               </span>
             </div>
           </div>
           <div className="grid flex-1 auto-rows-min gap-0.5">
-            <div className="text-sm text-muted-foreground">Exercise</div>
+            <div className="text-sm text-muted-foreground">Carbs</div>
             <div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-              73/120
+              {menuItem.carbs}
               <span className="text-sm font-normal text-muted-foreground">
-                min
+                /300g
               </span>
             </div>
           </div>
           <div className="grid flex-1 auto-rows-min gap-0.5">
-            <div className="text-sm text-muted-foreground">Stand</div>
+            <div className="text-sm text-muted-foreground">Fats</div>
             <div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-              8/12
+              {menuItem.fats}
               <span className="text-sm font-normal text-muted-foreground">
-                hr
+                /120g
               </span>
             </div>
           </div>
@@ -48,12 +48,12 @@ export default function MenuItem({ menuItem }: { menuItem: IMenuItem }) {
               label: "Calories",
               color: "hsl(var(--chart-1))",
             },
-            exercise: {
-              label: "Exercise",
+            carbs: {
+              label: "Carbs",
               color: "hsl(var(--chart-2))",
             },
-            stand: {
-              label: "Stand",
+            fats: {
+              label: "Fats",
               color: "hsl(var(--chart-3))",
             },
           }}
@@ -68,19 +68,19 @@ export default function MenuItem({ menuItem }: { menuItem: IMenuItem }) {
             }}
             data={[
               {
-                activity: "stand",
-                value: (8 / 12) * 100,
-                fill: "var(--color-stand)",
+                activity: "fats",
+                value: (menuItem.fats / 120) * 100,
+                fill: "hsl(var(--chart-3))",
               },
               {
-                activity: "exercise",
-                value: (46 / 60) * 100,
-                fill: "var(--color-exercise)",
+                activity: "carbs",
+                value: (menuItem.carbs / 300) * 100,
+                fill: "hsl(var(--chart-2))",
               },
               {
                 activity: "calories",
                 value: (menuItem.calories / 2000) * 100,
-                fill: "var(--color-calories)",
+                fill: "hsl(var(--chart-1))",
               },
             ]}
             innerRadius="20%"

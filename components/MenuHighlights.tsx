@@ -39,12 +39,12 @@ export default function MenuHighlights() {
     <Tabs defaultValue="food" className="w-full flex flex-col justify-center">
       <TabsList className="flex self-center w-fit mb-3">
         <TabsTrigger value="food">Food</TabsTrigger>
-        <TabsTrigger value="desert">Desert</TabsTrigger>
+        <TabsTrigger value="dessert">Dessert</TabsTrigger>
       </TabsList>
       <TabsContent value="food">
         <Carousel items={foodItems} />
       </TabsContent>
-      <TabsContent value="desert">
+      <TabsContent value="dessert">
         <Carousel items={desertItems} />
       </TabsContent>
       <Button

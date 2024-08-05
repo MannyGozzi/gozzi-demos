@@ -14,18 +14,17 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Icons } from "@/components/icons"
 
-const eventsItems = [
+const reserveItems = [
+  {
+    title: "Reserve a table",
+    href: "/reservations",
+    description: "Book a table online.",
+  },
   {
     title: "Upcoming Events",
     href: "/events/upcoming",
     description: "See what's happening at our restaurant.",
-  },
-  {
-    title: "Private Dining",
-    href: "/events/private-dining",
-    description: "Book a private space for your special occasion.",
   },
 ]
 
@@ -54,43 +53,25 @@ export function MainNav() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Events</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {eventsItems.map((item) => (
-                <ListItem key={item.title} title={item.title} href={item.href}>
-                  {item.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            className={navigationMenuTriggerStyle()}
-            onClick={() => router.push("/reservations")}
-          >
-            Reservations
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            className={navigationMenuTriggerStyle()}
-            onClick={() => router.push("/about")}
-          >
-            About
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
           <NavigationMenuLink
             className={navigationMenuTriggerStyle()}
             onClick={() => router.push("/contact")}
           >
             Contact
           </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Reserve</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              {reserveItems.map((item) => (
+                <ListItem key={item.title} title={item.title} href={item.href}>
+                  {item.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

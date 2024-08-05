@@ -23,7 +23,7 @@ export default function IndexPage() {
           quality={100}
           className="z-0 min-h-[50vh]"
         />
-        <div className="absolute bottom-8 left-0 z-10 w-full items-end flex justify-end">
+        <div className="absolute bottom-0 left-0 z-10 w-full items-end flex justify-end bg-gradient-to-l from-black/70 via-black/70 to-black/40 sm:via-black/50 sm:to-transparent h-full">
           <div className="rounded-2xl p-12">
             <h1 className="text-3xl font-medium leading-tight tracking-tighter md:text-6xl text-white">
               {siteConfig.name}
@@ -54,7 +54,7 @@ export default function IndexPage() {
         </h2>
         <MenuHighlights />
       </section>
-      <section className="m-6 flex flex-col items-center">
+      <section className="m-6 flex flex-col items-center mb-24">
         <h2 className="text-3xl font-medium text-foreground md:text-4xl my-4">
           Our Story
         </h2>

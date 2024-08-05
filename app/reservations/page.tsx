@@ -12,9 +12,9 @@ export default function ReservationsPage() {
   const [date, setDate] = React.useState<Date>()
 
   return (
-    <div className="mt-16 w-full h-full p-6 items-center flex  flex-col justify-center">
+    <div className="mt-16 w-full h-full p-6 mx-auto max-w-2xl">
       <h3 className="text-3xl font-bold tracking-tight mb-6">Save your seat</h3>
-      <fieldset className="grid gap-4 rounded-lg border p-4 w-full max-w-2xl">
+      <fieldset className="grid gap-4 rounded-lg border p-4 w-full">
         <legend className="-ml-1 px-1 text-sm font-medium">
           Your Information
         </legend>

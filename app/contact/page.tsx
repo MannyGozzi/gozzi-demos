@@ -16,7 +16,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-2xl mt-24 pb-8">
+    <div className="mx-auto max-w-2xl mt-16 pb-8 p-6">
       <h1 className="text-3xl font-bold mb-8">Contact Us</h1>
       <form className="grid w-full items-start gap-6">
         <fieldset className="grid gap-6 rounded-lg border p-4">

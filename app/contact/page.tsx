@@ -27,7 +27,7 @@ export default function ContactPage() {
             <Label>Phone</Label>
             <p className="text-sm">831-123-1234</p>
             <Label>Email</Label>
-            <p className="text-sm">hello@giorgio.com</p>
+            <p className="text-sm">hello@labellaitalia.com</p>
           </div>
         </fieldset>
         <fieldset className="grid gap-6 rounded-lg border p-4">

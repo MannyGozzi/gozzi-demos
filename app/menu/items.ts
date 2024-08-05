@@ -7,6 +7,7 @@ export interface IMenuItem {
   price: number
   description: string
   allergies: string[]
+  image?: string
 }
 
 export const foodItems: IMenuItem[] = [
@@ -19,6 +20,7 @@ export const foodItems: IMenuItem[] = [
     price: 12,
     description: "Spaghetti with pancetta, eggs, and cheese",
     allergies: ["dairy", "eggs"],
+    image: "/images/spaghetti.jpg",
   },
   {
     title: "Lasagna",
@@ -29,6 +31,7 @@ export const foodItems: IMenuItem[] = [
     price: 15,
     description: "Lasagna with beef, tomato sauce, and cheese",
     allergies: ["dairy", "gluten"],
+    image: "/images/lasagna.jpg",
   },
   {
     title: "Fettuccine Alfredo",
@@ -39,6 +42,7 @@ export const foodItems: IMenuItem[] = [
     price: 14,
     description: "Fettuccine with cream, butter, and cheese",
     allergies: ["dairy", "gluten"],
+    image: "/images/fettuccine.jpg",
   },
   {
     title: "Ravioli",
@@ -49,6 +53,7 @@ export const foodItems: IMenuItem[] = [
     price: 13,
     description: "Ravioli with ricotta and spinach",
     allergies: ["dairy", "gluten"],
+    image: "/images/ravioli.jpg",
   },
   {
     title: "Penne Arrabbiata",
@@ -59,6 +64,7 @@ export const foodItems: IMenuItem[] = [
     price: 11,
     description: "Penne with spicy tomato sauce",
     allergies: ["gluten"],
+    image: "/images/penne.jpg",
   },
   {
     title: "Gnocchi",
@@ -69,6 +75,7 @@ export const foodItems: IMenuItem[] = [
     price: 13,
     description: "Gnocchi with tomato sauce and cheese",
     allergies: ["dairy", "gluten"],
+    image: "/images/gnocchi.jpg",
   },
 ]
 
@@ -82,26 +89,7 @@ export const desertItems: IMenuItem[] = [
     price: 8,
     description: "Classic Italian dessert made with coffee and mascarpone",
     allergies: ["dairy", "eggs"],
-  },
-  {
-    title: "Cannoli",
-    calories: 600,
-    protein: 15,
-    carbs: 80,
-    fats: 30,
-    price: 7,
-    description: "Crispy pastry shell filled with sweet ricotta",
-    allergies: ["dairy", "gluten"],
-  },
-  {
-    title: "Panna Cotta",
-    calories: 400,
-    protein: 5,
-    carbs: 60,
-    fats: 15,
-    price: 6,
-    description: "Sweetened cream thickened with gelatin",
-    allergies: ["dairy"],
+    image: "/images/tiramisu.jpg",
   },
   {
     title: "Gelato",
@@ -112,6 +100,7 @@ export const desertItems: IMenuItem[] = [
     price: 5,
     description: "Italian-style ice cream",
     allergies: ["dairy"],
+    image: "/images/gelato.jpg",
   },
   {
     title: "Creme Brulee",
@@ -122,5 +111,6 @@ export const desertItems: IMenuItem[] = [
     price: 9,
     description: "Rich custard topped with caramelized sugar",
     allergies: ["dairy", "eggs"],
+    image: "/images/cremeBrulee.jpg",
   },
 ]

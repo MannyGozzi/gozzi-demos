@@ -8,11 +8,11 @@ import { IMenuItem } from "@/app/menu/items"
 
 export default function MenuItem({ menuItem }: { menuItem: IMenuItem }) {
   return (
-    <Card className="max-w-xs">
+    <Card className="max-w-xs hover:shadow">
       <h3 className="text-lg font-medium text-foreground w-full px-4 mt-4">
         {menuItem.title}
       </h3>
-      <CardContent className="flex gap-4 p-4">
+      <CardContent className="flex gap-4 p-4 flex-wrap md:flex-nowrap">
         <div className="grid items-center gap-2">
           <div className="grid flex-1 auto-rows-min gap-0.5">
             <div className="text-sm text-muted-foreground">Calories</div>

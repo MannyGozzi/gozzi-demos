@@ -1,48 +1,96 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { BrainCircuit, ChefHat } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Footer } from "@/components/Footer"
+import MenuHighlights from "@/components/MenuHighlights"
 
 export default function IndexPage() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center">
-      <Image
-        src="/images/restaurant.jpg"
-        alt="Restaurant background"
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        className="z-0"
-      />
-      <div className="absolute bottom-16 left-0 z-10 w-full items-end flex justify-end h-full">
-        <div className="rounded-2xl p-12">
-          <h1 className="text-3xl font-medium leading-tight tracking-tighter md:text-6xl text-white">
-            {siteConfig.name}
-          </h1>
-          <p className="max-w-[700px] text-lg text-white/90 mt-2">
-            Your go-to for everyday fine dining.
-          </p>
-          <div className="mt-6 flex flex-row gap-2">
-            <Link
-              href={siteConfig.links.docs}
-              target="_blank"
-              rel="noreferrer"
-              className={buttonVariants({ variant: "secondary" })}
-            >
-              View Menu
-            </Link>
-            <Link
-              href={siteConfig.links.docs}
-              target="_blank"
-              rel="noreferrer"
-              className={buttonVariants({ variant: "default" })}
-            >
-              Reserve Now
-            </Link>
+    <section className="w-full flex flex-col max-w-screen">
+      <div className="relative max-h-screen w-full overflow-hidden">
+        <Image
+          src="/images/restaurant.jpg"
+          alt="Restaurant background"
+          width={1920}
+          height={1080}
+          objectFit="cover"
+          quality={100}
+          className="z-0 min-h-[50vh]"
+        />
+        <div className="absolute bottom-8 left-0 z-10 w-full items-end flex justify-end">
+          <div className="rounded-2xl p-12">
+            <h1 className="text-3xl font-medium leading-tight tracking-tighter md:text-6xl text-white">
+              {siteConfig.name}
+            </h1>
+            <p className="max-w-[700px] text-lg text-white/90 mt-2">
+              Your go-to for everyday fine dining.
+            </p>
+            <div className="mt-6 flex flex-row gap-2">
+              <Link
+                href={siteConfig.links.menu}
+                className={buttonVariants({ variant: "secondary" })}
+              >
+                View Menu
+              </Link>
+              <Link
+                href={siteConfig.links.reservations}
+                className={buttonVariants({ variant: "default" })}
+              >
+                Reserve Now
+              </Link>
+            </div>
           </div>
         </div>
       </div>
+      <section className="flex flex-col gap-4 w-full px-6 mt-6 items-center">
+        <h2 className="text-3xl font-medium text-foreground md:text-4xl">
+          Customer Favorites
+        </h2>
+        <MenuHighlights />
+      </section>
+      <section className="m-6 flex flex-col items-center">
+        <h2 className="text-3xl font-medium text-foreground md:text-4xl my-4">
+          Our Story
+        </h2>
+        <div className="flex flex-row gap-4 justify-evenly mt-4 flex-wrap">
+          <Card className="text-lg text-muted-foreground mt-2 max-w-lg">
+            <CardHeader className="text-3xl font-medium text-foreground flex flex-row gap-2">
+              <ChefHat size={40} className="text-foreground" />
+              Origins
+            </CardHeader>
+            <CardContent className="px-8 text-base">
+              Since 2010, we've been serving the best food in town. Our chefs
+              are dedicated to making your dining experience unforgettable. We
+              source the freshest ingredients to ensure the highest quality
+              meals. Our restaurant is perfect for any occasion, whether it's a
+              date night or a family dinner. We look forward to serving you
+              soon!
+            </CardContent>
+          </Card>
+          <Card className="text-lg text-muted-foreground mt-2 max-w-lg">
+            <CardHeader className="text-3xl font-medium text-foreground flex flex-row gap-2 items-ce">
+              <BrainCircuit size={40} className="text-foreground" />
+              Our Philosophy
+            </CardHeader>
+            <CardContent className="px-8 text-base">
+              We believe that food should be more than just sustenance. It
+              should be an experience. That's why we put so much care and
+              attention into every dish we serve. Our menu is full of delicious
+              options that are sure to please even the most discerning palate.
+              We also offer a selection of fine wines and craft cocktails to
+              complement your meal. Come dine with us and see for yourself what
+              sets us apart.
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      <Footer />
     </section>
   )
 }

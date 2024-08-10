@@ -13,23 +13,22 @@ import MenuHighlights from "@/components/MenuHighlights"
 export default function IndexPage() {
   return (
     <section className="w-full flex flex-col max-w-screen">
-      <div className="relative max-h-screen w-full overflow-hidden">
-        <Image
+      <div className="relative max-h-[70vh] w-full overflow-hidden">
+        <div className="h-[55vh] sm:h-[100vh]"><Image
           src="/images/restaurant.jpg"
           alt="Restaurant background"
-          width={1920}
-          height={1080}
-          objectFit="cover"
+          fill
           quality={100}
-          className="z-0 min-h-[50vh]"
+          className="h-full object-cover"
         />
+        </div>
         <div className="absolute bottom-0 left-0 z-10 w-full items-end flex justify-end bg-gradient-to-l from-black/70 via-black/70 to-black/40 sm:via-black/50 sm:to-transparent h-full">
           <div className="rounded-2xl p-12">
-            <h1 className="text-3xl font-medium leading-tight tracking-tighter md:text-6xl text-white">
+            <h1 className="text-4xl font-medium leading-tight tracking-tighter md:text-7xl text-white font-splash">
               {siteConfig.name}
             </h1>
             <p className="max-w-[700px] text-lg text-white/90 mt-2">
-              Your go-to for everyday fine dining.
+              Your go-to for fine dining
             </p>
             <div className="mt-6 flex flex-row gap-2">
               <Link

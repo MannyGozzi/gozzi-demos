@@ -1,4 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
+import { fontSplash } from './lib/fonts'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,10 +10,30 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1400px',
+        '3xl': '1600px',
+        '4xl': '1920px',
+        '5xl': '2560px',  // 1440p
+        '6xl': '3840px',  // 4K
+        '7xl': '5120px',  // 5K
+        '8xl': '7680px',  // 8K
       },
+
     },
     extend: {
+      maxWidth: {
+        '2xl': '1400px',
+        '3xl': '1600px',
+        '4xl': '1920px',
+        '5xl': '2560px',
+        '6xl': '3840px',
+        '7xl': '5120px',
+        '8xl': '7680px',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,6 +76,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        splash: ["var(--font-splash)", ...fontFamily.sans]
       },
       keyframes: {
         "accordion-down": {

@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { ChefHat } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -34,6 +35,14 @@ export function MainNav() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            className={cn(navigationMenuTriggerStyle(), "px-2 m-0")}
+            onClick={() => router.push("/")}
+          >
+            <ChefHat size={25} className="text-foreground" />
+          </NavigationMenuLink>
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
             className={navigationMenuTriggerStyle()}

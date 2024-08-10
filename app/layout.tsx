@@ -2,7 +2,7 @@ import "@/styles/globals.css"
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
-import { fontPoppins } from "@/lib/fonts"
+import { fontPoppins, fontSplash } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
@@ -32,12 +32,12 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning className={`${fontPoppins.variable} ${fontSplash.variable}`}>
         <head />
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
-            fontPoppins.className
+            fontPoppins.className,
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

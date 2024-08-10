@@ -8,7 +8,7 @@ import { IMenuItem } from "@/app/menu/items"
 
 export default function MenuItem({ menuItem }: { menuItem: IMenuItem }) {
   return (
-    <Card className="max-w-xs hover:shadow">
+    <Card className="max-w-xs w-full hover:shadow">
       <h3 className="text-lg font-medium text-foreground w-full px-4 mt-4">
         {menuItem.title}
       </h3>

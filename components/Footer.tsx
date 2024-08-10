@@ -3,7 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import { Facebook, Instagram, Twitter } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
+import { siteConfig } from "@/config/site"
 
 export function Footer() {
   return (
@@ -21,7 +21,7 @@ export function Footer() {
       <div className="container mx-auto py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">La Bella Italia</h3>
+            <h3 className="text-lg font-semibold mb-4">{siteConfig.name}</h3>
             <p className="text-sm">Authentic Italian cuisine since 1985</p>
           </div>
           <div>
@@ -64,9 +64,9 @@ export function Footer() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex space-x-2">
+              <div className="flex flex-col lg:flex-row gap-2">
                 <Input type="email" placeholder="Enter your email" />
-                <Button>Subscribe</Button>
+                <Button className="w-full sm:block">Subscribe</Button>
               </div>
             </CardContent>
           </Card>
@@ -74,7 +74,7 @@ export function Footer() {
         <Separator className="my-6" />
         <div className="flex justify-between items-center">
           <p className="text-sm">
-            &copy; 2024 La Bella Italia. All rights reserved.
+            &copy; 2024 {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <Button variant="ghost" size="icon">

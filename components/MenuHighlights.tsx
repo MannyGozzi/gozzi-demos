@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import { Loader2 } from "lucide-react"
 
 import {
   Carousel,
@@ -22,7 +23,9 @@ const MenuItem = ({ menuItem }: { menuItem: IMenuItem }) => {
     <article className="w-full">
       <div className="relative w-full aspect-square">
         {isLoading && (
-          <Skeleton className="absolute inset-0 w-full h-full rounded-2xl" />
+          <Skeleton className="absolute inset-0 w-full h-full rounded-2xl flex justify-center items-center">
+            <Loader2 className="w-8 h-8 animate-spin text-foreground" />
+          </Skeleton>
         )}
         <Image
           src={menuItem.image || ""}
@@ -64,7 +67,10 @@ const MenuCarousel = ({ items }: { items: IMenuItem[] }) => {
 export default function MenuHighlights() {
   const router = useRouter()
   return (
-    <Tabs defaultValue="food" className="w-full max-w-3xl flex flex-col items-center">
+    <Tabs
+      defaultValue="food"
+      className="w-full max-w-3xl flex flex-col items-center"
+    >
       <TabsList className="mb-4 mx-auto">
         <TabsTrigger value="food">Food</TabsTrigger>
         <TabsTrigger value="dessert">Dessert</TabsTrigger>

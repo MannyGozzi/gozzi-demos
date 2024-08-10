@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { BrainCircuit, ChefHat } from "lucide-react"
 
@@ -14,13 +13,17 @@ export default function IndexPage() {
   return (
     <section className="w-full flex flex-col max-w-screen">
       <div className="relative max-h-[70vh] w-full overflow-hidden">
-        <div className="h-[55vh] sm:h-[100vh]"><Image
-          src="/images/restaurant.jpg"
-          alt="Restaurant background"
-          fill
-          quality={100}
-          className="h-full object-cover"
-        />
+        <div className="h-[55vh] sm:h-[100vh]">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-cover"
+          >
+            <source src="/videos/restHigh.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div className="absolute bottom-0 left-0 z-10 w-full items-end flex justify-end bg-gradient-to-l from-black/70 via-black/70 to-black/40 sm:via-black/50 sm:to-transparent h-full">
           <div className="rounded-2xl p-12">

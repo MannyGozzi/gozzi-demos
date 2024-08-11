@@ -5,10 +5,12 @@ import { PolarAngleAxis, RadialBar, RadialBarChart } from "recharts"
 import { Card, CardContent } from "@/components/ui/card"
 import { ChartContainer } from "@/components/ui/chart"
 import { IMenuItem } from "@/app/menu/items"
+import { motion } from "framer-motion"
 
-export default function MenuItem({ menuItem }: { menuItem: IMenuItem }) {
+export default function NutritionItem({ menuItem, onClick }: { menuItem: IMenuItem, onClick: (item: IMenuItem) => void }) {
+  const AnimCard = motion(Card)
   return (
-    <Card className="max-w-xs w-full hover:shadow">
+    <AnimCard className="max-w-xs w-full hover:shadow" layoutId={menuItem.title} onClick={() => onClick(menuItem)}>
       <h3 className="text-lg font-medium text-foreground w-full px-4 mt-4">
         {menuItem.title}
       </h3>
@@ -98,6 +100,6 @@ export default function MenuItem({ menuItem }: { menuItem: IMenuItem }) {
           </RadialBarChart>
         </ChartContainer>
       </CardContent>
-    </Card>
+    </AnimCard>
   )
 }

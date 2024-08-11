@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Footer } from "@/components/Footer"
 import MenuHighlights from "@/components/MenuHighlights"
+import ReviewShowcase from "@/components/ReviewShowcase"
 
 export default function IndexPage() {
   return (
@@ -55,6 +56,12 @@ export default function IndexPage() {
           Customer Favorites
         </h2>
         <MenuHighlights />
+      </section>
+      <section>
+        <h2 className="text-3xl p-4 font-medium text-center  text-foreground md:text-4xl mt-8 mb-4">
+          What Customers are Saying
+        </h2>
+        <ReviewShowcase />
       </section>
       <section className="m-6 flex flex-col items-center mb-24">
         <h2 className="text-3xl font-medium text-foreground md:text-4xl my-4">
